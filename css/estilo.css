@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border: 10px solid rgb(64, 64, 64);
+    border-radius: 10px;
+}
+
+.header{
+    margin-top: 20%;
+    
+}
+
+#FotoPerfil {
+    max-width: 100px;
+    border: 3px solid white;
+    border-radius: 200px;
+}
+
+h2 {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25pt ;
+    color: rgb(64, 64, 64);
+}
+
+h3{
+    font-size: 9pt;
+}
+
+a {
+    text-decoration: none;
+}
+
+.bi {
+    padding: 3%;
+    font-size: 16pt;
+    margin-right: 5%;
+    text-decoration: none;
+    
+}
+
+.bi-linkedin {
+    color: rgb(10, 102, 194);
+}
+
+.bi-instagram {
+    color: rgb(221, 9, 170);
+}
+
+.bi-whatsapp {
+    color: rgb(74, 235, 103);
+}
+
+.bi-envelope-at {
+    color: rgb(250, 6, 6);
+}
+
+.principal {
+    margin-top: 5%;
+    background-color: rgb(64, 64, 64);
+    border-radius: 30px 30px 0 0; /* Bordas superiores arredondadas */
+    display: flex;
+    flex-direction: column; /* Alinha os botões verticalmente */
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh; /* Ajuste para que cubra toda a parte inferior do navegador */
+}
+
+.btn {
+  background-color: white;  
+  width: 80%;
+  margin-top: 5%;
+}
+
+.btn, a{
+    text-decoration: none;
+    color: rgb(64, 64, 64);
+}
+
+.btn:hover{
+    background-color: white;
+}
+
+/* Media Queries para ajustar para dispositivos móveis */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 12pt;
+    }
+
+    #FotoPerfil {
+        max-width: 70px;
+    }
+
+    .btn {
+        width: 90%;
+        font-size: 12pt;
+    }
+}
+
+@media (min-width: 769px) {
+    .btn {
+        width: 60%;
+        font-size: 14pt;
+    }
+}

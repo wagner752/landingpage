@@ -1,46 +1,254 @@
-<!doctype html>
-<html lang="pt-BR"> <!-- Alterado para pt-BR -->
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Wagner Cruz</title>
-    
-    <link rel="icon" href="img/favicon.svg" type="image/x-icon">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="css/estilo.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-</head>
-  <body>
-    
-    <div class="container-fluid"> 
-        <div class="row">
-            <section class="header">
-                <div class="text-center">
-                    <img src="img/Foto Perfil.jpg" id="FotoPerfil" class="img-fluid" alt="Foto de perfil">
-                    <h2>Wagner Cruz</h2>
-                    <h3>Tecnologia da Informação</h3>
-                    <a href="https://www.linkedin.com/in/wagner--cruz" target="_blank"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://www.instagram.com/w__wagner/" target="_blank"><i class="bi bi-instagram"></i></a>
-                    <a href="https://wa.me/+5584991652870" target="_blank"><i class="bi bi-whatsapp"></i></a>
-                    <a href="mailto:wagner752@gmail.com" target="_blank"><i class="bi bi-envelope-at"></i></a>
-                </div>
-            </section>
-        </div> <!-- /row -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wagner Cruz | Tecnologia e Soluções Digitais</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         
-        <div class="row">
-            <section class="principal">
-                <button type="button" class="btn"><a href="https://api.whatsapp.com/send?phone=5584991652870&text=Ol%C3%A1,%20estou%20sem%20acesso%20e%20preciso%20recuperar%20uma%20conta."><span class="material-symbols-outlined">verified_user</span>Recuperação de redes sociais</a></button>
-                <button type="button" class="btn"><a href="https://api.whatsapp.com/send?phone=5584991652870&text=Ol%C3%A1,%20gostaria%20de%20blindar%20minhas%20redes%20sociais." target="_blank"><span class="material-symbols-outlined">security</span> Blindagem de redes sociais</a></button>
-                <button type="button" class="btn"><a href="https://api.whatsapp.com/send?phone=5584991652870&text=Ol%C3%A1,%20estou%20precisando%20de%20suporte%20t%C3%A9cnico.%0APode%20me%20ajudar?" target="_blank"><span class="material-symbols-outlined">build</span>Suporte Técnico em TI</a></button>
-            </section>
-        </div>
+        :root {
+            --neon-blue: #00f2ff;
+            --electric-purple: #8a2be2;
+            --dark-bg: #0f0f1a;
+            --darker-bg: #07070f;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .glow {
+            box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+        }
+        
+        .glow:hover {
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+        }
+        
+        .btn-glow {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-glow::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            z-index: -1;
+            background: linear-gradient(45deg, var(--neon-blue), var(--electric-purple), var(--neon-blue));
+            background-size: 200% 200%;
+            border-radius: 9999px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-glow:hover::before {
+            opacity: 1;
+            animation: gradient 3s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(0, 242, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 242, 255, 0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, var(--neon-blue), var(--electric-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+            filter: drop-shadow(0 0 8px rgba(138, 43, 226, 0.8));
+        }
+        
+        .avatar-border {
+            border: 3px solid transparent;
+            background: linear-gradient(var(--dark-bg), var(--dark-bg)) padding-box,
+                        linear-gradient(45deg, var(--neon-blue), var(--electric-purple)) border-box;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="min-h-screen flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
+        <!-- Profile Section -->
+        <section class="w-full max-w-md text-center fade-in">
+            <div class="avatar-border rounded-full w-32 h-32 mx-auto mb-6 overflow-hidden">
+                <img src="img/Foto Perfil.jpg" alt="Wagner Cruz" class="w-full h-full object-cover">
+            </div>
+            <h1 class="text-3xl font-bold mb-2 gradient-text">Wagner Cruz</h1>
+            <p class="text-gray-400 mb-8">Tecnologia e Soluções Digitais</p>
+        </section>
+        
+        <!-- Links Section -->
+        <section class="w-full max-w-md space-y-4 mb-12">
+            <div class="fade-in">
+                <a href="https://wa.me/?text=Olá Wagner! Tenho interesse no serviço de Recuperação de Redes Sociais." 
+                   class="btn-glow block w-full py-4 px-6 bg-gray-800 rounded-xl text-center font-medium transition-all duration-300 hover:bg-gray-700 hover:text-white">
+                    <span class="flex items-center justify-center">
+                        <i class="fas fa-lock-open text-purple-400 mr-3"></i>
+                        Recuperação de Redes Sociais
+                    </span>
+                </a>
+            </div>
+            
+            <div class="fade-in" style="transition-delay: 0.1s">
+                <a href="https://wa.me/?text=Olá Wagner! Quero saber mais sobre o serviço de Blindagem de Redes Sociais." 
+                   class="btn-glow block w-full py-4 px-6 bg-gray-800 rounded-xl text-center font-medium transition-all duration-300 hover:bg-gray-700 hover:text-white">
+                    <span class="flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-blue-400 mr-3"></i>
+                        Blindagem de Redes Sociais
+                    </span>
+                </a>
+            </div>
+            
+            <div class="fade-in" style="transition-delay: 0.2s">
+                <a href="https://wa.me/?text=Olá Wagner! Preciso de suporte técnico em TI." 
+                   class="btn-glow block w-full py-4 px-6 bg-gray-800 rounded-xl text-center font-medium transition-all duration-300 hover:bg-gray-700 hover:text-white">
+                    <span class="flex items-center justify-center">
+                        <i class="fas fa-headset text-green-400 mr-3"></i>
+                        Suporte Técnico em TI
+                    </span>
+                </a>
+            </div>
+            
+            <div class="fade-in" style="transition-delay: 0.3s">
+                <a href="https://wa.me/?text=Olá Wagner! Gostaria de informações sobre Desenvolvimento de Websites." 
+                   class="btn-glow block w-full py-4 px-6 bg-gray-800 rounded-xl text-center font-medium transition-all duration-300 hover:bg-gray-700 hover:text-white">
+                    <span class="flex items-center justify-center">
+                        <i class="fas fa-code text-yellow-400 mr-3"></i>
+                        Desenvolvimento de Websites
+                    </span>
+                </a>
+            </div>
+            
+            <div class="fade-in" style="transition-delay: 0.4s">
+                <a href="https://wagner752.github.io/Catalogo-de-sites/" target="_blank" 
+                   class="btn-glow block w-full py-4 px-6 bg-gray-800 rounded-xl text-center font-medium transition-all duration-300 hover:bg-gray-700 hover:text-white">
+                    <span class="flex items-center justify-center">
+                        <i class="fas fa-book-open text-pink-400 mr-3"></i>
+                        Catálogo de Sites
+                    </span>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Social Media Section -->
+        <section class="w-full max-w-md fade-in" style="transition-delay: 0.5s">
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/wagner--cruz" target="_blank" class="social-icon text-2xl text-blue-400 hover:text-blue-300">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://instagram.com/w__wagner" target="_blank" class="social-icon text-2xl text-purple-400 hover:text-purple-300">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/" class="social-icon text-2xl text-green-400 hover:text-green-300">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:wagner752@gmail.com" class="social-icon text-2xl text-red-400 hover:text-red-300">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </section>
+    </div>
     
-    </div> <!-- /container-fluid -->
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg pulse">
+        <i class="fab fa-whatsapp"></i>
+    </a>
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-  </body>
+    <script>
+        // Scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+        
+        // Button hover effects
+        document.querySelectorAll('.btn-glow').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
 </html>
